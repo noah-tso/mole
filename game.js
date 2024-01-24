@@ -85,8 +85,8 @@ function getNextStatus(mole) {
         case "fed":
             mole.next = getSadInterval();
             mole.status = "leaving";
-            if (mole.king) mole.node.children[0].src = "king-mole-leaving.png";
-            else mole.node.children[0].src = "mole-leaving.png";
+            if (mole.king) mole.node.children[0].src = "./images/king-mole-leaving.png";
+            else mole.node.children[0].src = "./images/mole-leaving.png";
             break;
         case "leaving":
             mole.next = getGoneInterval();
@@ -99,15 +99,15 @@ function getNextStatus(mole) {
             mole.status = "hungry";
             mole.node.children[0].classList.add("hungry");
             mole.node.children[0].classList.remove("gone");
-            if (mole.king) mole.node.children[0].src = "king-mole-hungry.png";
-            else mole.node.children[0].src = "mole-hungry.png";
+            if (mole.king) mole.node.children[0].src = "./images/king-mole-hungry.png";
+            else mole.node.children[0].src = "./images/mole-hungry.png";
             break;
         case "hungry":
             mole.next = getSadInterval();
             mole.status = "sad";
             mole.node.children[0].classList.remove("hungry");
-            if (mole.king) mole.node.children[0].src = "king-mole-sad.png";
-            else mole.node.children[0].src = "mole-sad.png";
+            if (mole.king) mole.node.children[0].src = "./images/king-mole-sad.png";
+            else mole.node.children[0].src = "./images/mole-sad.png";
             break;
     }
 }
@@ -121,10 +121,10 @@ function feed(event) {
     mole.status = "fed";
     mole.next = getSadInterval();
     if (mole.king) {
-        mole.node.children[0].src = "king-mole-fed.png";
+        mole.node.children[0].src = "./images/king-mole-fed.png";
         score++;
     } else {
-        mole.node.children[0].src = "mole-fed.png";
+        mole.node.children[0].src = "./images/mole-fed.png";
     }
     mole.node.children[0].classList.remove("hungry");
 
